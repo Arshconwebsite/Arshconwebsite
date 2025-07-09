@@ -1,0 +1,299 @@
+
+/* Hero Section */
+.hero-about {
+  background: url("../Images/construction-Banner.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-about .overlay {
+  background: rgba(0, 0, 0, 0.6);
+  padding: 30px;
+  width: 100%;
+}
+
+.hero-about h1 {
+  font-size: 3rem;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+.hero-about p {
+  font-size: 1.3rem;
+  margin-top: 10px;
+}
+
+/* Company Introduction */
+.about-company {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.about-content img {
+  width: 50%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.about-content .text {
+  width: 50%;
+  text-align: left;
+}
+
+.about-content p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+/* Company history */
+
+.company-history {
+  background: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.company-history .container {
+  max-width: 900px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  color: #222;
+}
+
+/* Timeline Container */
+.timeline {
+  position: relative;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+/* Timeline Vertical Line */
+.timeline::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  width: 4px;
+  height: 100%;
+  background: #c00;
+  top: 0;
+  transform: translateX(-50%);
+}
+
+/* Timeline Items */
+.timeline-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  margin-bottom: 40px;
+}
+
+/* Year Indicator */
+.year {
+  background: #c00;
+  color: white;
+  font-size: 1.3rem;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 30px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+/* History Content Box */
+.history-content {
+  width: 40%;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+/* Alternating Layout */
+.timeline-item:nth-child(odd) {
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.timeline-item:nth-child(even) {
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+}
+
+/* Responsive: Single Column Layout on Mobile */
+@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .year {
+    left: 20px;
+    transform: none;
+    font-size: 1.2rem;
+    padding: 8px 16px;
+    min-width: 60px;
+  }
+
+  .history-content {
+    width: 100%;
+    margin-left: 40px;
+  }
+}
+
+/* Why Choose Us Section */
+.why-choose {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.features {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.feature {
+  width: 30%;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.feature img {
+  width: 80px;
+  margin-bottom: 15px;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #222;
+}
+
+.feature p {
+  font-size: 1rem;
+  color: #555;
+}
+
+.feature:hover {
+  transform: translateY(-5px);
+}
+
+/* Meet the Team Section */
+.team {
+  background: #fff;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.team-members {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.member {
+  position: relative;
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.member:hover {
+  transform: scale(1.05);
+}
+
+.member img {
+  width: 100%;
+  display: block;
+}
+
+.info {
+  position: absolute;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-content,
+  .features,
+  .team-grid {
+    flex-direction: column;
+  }
+
+  .about-content img,
+  .about-content .text {
+    width: 100%;
+  }
+
+  .feature,
+  .team-member {
+    width: 100%;
+  }
+  .timeline-item {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .history-content {
+    width: 80%;
+    margin: auto;
+  }
+
+  .year {
+    position: relative;
+    left: auto;
+    transform: none;
+    margin-bottom: 10px;
+  }
+
+  .team-members {
+    flex-direction: column;
+    align-items: center;
+  }
+}
