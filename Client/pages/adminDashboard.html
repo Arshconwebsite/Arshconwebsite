@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" content="text/css" href="../Styles/main.css" />
+    <link rel="stylesheet" href="../Styles/admin.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div id="nav-insert"></div>
+      </header>
+      <button class="logout" onclick="logout()">Logout</button>
+      <h2>Admin Dashboard</h2>
+
+      <!-- 📂 ALL PROJECTS SECTION -->
+      <div class="section" id="project-list-section">
+        <h3>📂 All Projects</h3>
+        <div id="project-list"></div>
+      </div>
+
+      <!-- 📤 UPLOAD / EDIT PROJECT SECTION -->
+      <div class="section" id="project-form-section">
+        <h3 id="form-title">📤 Upload New Project</h3>
+        <form id="add-project-form">
+          <input type="hidden" id="editMode" value="false" />
+          <input type="hidden" id="editProjectId" />
+
+          <input type="text" id="title" placeholder="Project Title" required />
+          <input
+            type="text"
+            id="location"
+            placeholder="Project Location"
+            required
+          />
+
+          <select id="status" required>
+            <option value="" disabled selected>Select Status</option>
+            <option value="Completed">Completed</option>
+            <option value="Ongoing">Ongoing</option>
+            <option value="Upcoming">Upcoming</option>
+          </select>
+
+          <label>Completion Date:</label>
+          <input type="date" id="completionDate" required />
+
+          <select id="category" required>
+            <option value="" disabled selected>Select Category</option>
+            <option value="Residential">Residential</option>
+            <option value="Commercial">Commercial</option>
+            <option value="Industrial">Industrial</option>
+            <option value="Interior">Interior</option>
+          </select>
+
+          <label>Banner Image:</label>
+          <input type="file" id="banner" accept="image/*" />
+          <div id="bannerPreview"></div>
+
+          <label>Gallery Images:</label>
+          <input type="file" id="gallery" accept="image/*" multiple />
+          <div id="galleryPreview"></div>
+
+          <label>Description:</label>
+          <textarea
+            id="description"
+            placeholder="Project Description"
+            rows="4"
+            required
+          ></textarea>
+
+          <!-- Milestones -->
+          <h4>Project Milestones:</h4>
+          <div id="milestones">
+            <div class="milestone-group">
+              <input type="text" class="milestone-year" placeholder="Year" />
+              <input type="text" class="milestone-event" placeholder="Event" />
+            </div>
+          </div>
+          <button type="button" onclick="addMilestone()">
+            + Add Milestone
+          </button>
+
+          <button type="submit">Save Project</button>
+          <p id="success-msg" style="color: green; text-align: center"></p>
+        </form>
+      </div>
+
+      <!-- 👤 ADMIN INFO SECTION -->
+      <div class="section" id="admin-info-section">
+        <h3>👤 Admin Info</h3>
+        <form id="admin-info-form">
+          <input type="text" id="adminName" placeholder="Admin Name" required />
+          <input
+            type="email"
+            id="adminEmail"
+            placeholder="Admin Email"
+            required
+          />
+          <input
+            type="password"
+            id="adminPassword"
+            placeholder="Password"
+            required
+          />
+          <button type="submit">Update Info</button>
+          <p id="admin-update-msg" style="color: green"></p>
+        </form>
+      </div>
+      <!------------------ Footer Section ---------------------->
+      <div id="footer"></div>
+    </div>
+
+    <script src="../Javascript/adminDashboard.js"></script>
+    <script src="../Javascript/navigationFetch.js"></script>
+  </body>
+</html>
